@@ -2,7 +2,7 @@
 name: "Bug \U0001F41B"
 about: Create a bug report to help us improve
 title: ''
-labels: bug
+labels: "type.bug \U0001F41B"
 assignees: imsamdez
 
 ---

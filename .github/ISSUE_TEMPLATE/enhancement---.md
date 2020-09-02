@@ -2,7 +2,7 @@
 name: "Enhancement \U0001F3AF"
 about: Tell us how to improve something in our current release
 title: ''
-labels: enhancement
+labels: "type.enhancement \U0001F3AF"
 assignees: imsamdez
 
 ---
