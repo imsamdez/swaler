@@ -2,7 +2,7 @@
 
 <br>
 
-## Welcome 👋
+# Welcome 👋
 
 At the time this contribute file is written, Swaler is not yet existing.
 
@@ -10,7 +10,9 @@ Swaler has not the intent to be the best logger library, but simply to be a cool
 
 So if you have any enhancement, bug or feature requests, you are much welcomed!
 
-<br>
+# Contributing
+
+Contributions are (and will be) always welcomed! To contribute, fork Swaler, commit your changes and open a pull request 💪
 
 ## Ask for an Enhancement 🎯
 
