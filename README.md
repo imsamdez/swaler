@@ -1,5 +1,8 @@
 # Swaler
 
+![build](https://github.com/imsamdez/swaler/workflows/build/badge.svg?branch=master)
+![Publish to NPM](https://github.com/imsamdez/swaler/workflows/Publish%20to%20NPM/badge.svg)
+
 Swaler makes you easy and simple to log message in your web app, but not only that!
 
 It has been developed on top of javascript [console](https://developer.mozilla.org/en-US/docs/Web/API/console) and support the following methods: `.trace`, `.debug`, `.info`, `.warn`, `.error`
