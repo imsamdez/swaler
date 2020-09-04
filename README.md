@@ -2,7 +2,7 @@
 
 Swaler makes you easy and simple to log message in your web app, but not only that!
 
-It has been developed on top of `console`. Use it like if you were using `console[.trace,.debug,.info,.warn,.error]` methods!
+It has been developed on top of javascript [console](https://developer.mozilla.org/en-US/docs/Web/API/console). Use it like if you were using [console](https://developer.mozilla.org/en-US/docs/Web/API/console) methods!
 
 ## Installation
 
