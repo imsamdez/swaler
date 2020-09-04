@@ -1,5 +1,8 @@
 # Swaler
 
+![build](https://github.com/imsamdez/swaler/workflows/build/badge.svg?branch=master)
+![Publish to NPM](https://github.com/imsamdez/swaler/workflows/Publish%20to%20NPM/badge.svg)
+
 Swaler makes you easy and simple to log message in your web app, but not only that!
 
 It has been developed on top of javascript [console](https://developer.mozilla.org/en-US/docs/Web/API/console) and support the following methods: `.trace`, `.debug`, `.info`, `.warn`, `.error`
@@ -90,15 +93,15 @@ import {Swaler, SwalerLevels} from 'swaler';
 
 const logger = new Swaler(null, {level: SwalerLevels.WARN});
 
-loggerWithLevel.debug("Won't be logged!");
-loggerWithLevel.info("Won't be logged!");
-loggerWithLevel.warn('Will be logged!');
-loggerWithLevel.error('Will be logged!');
+logger.debug("Won't be logged!");
+logger.info("Won't be logged!");
+logger.warn('Will be logged!');
+logger.error('Will be logged!');
 ```
 
 # Log
 
-All log methods are built on top of `console` which means that each Swaler log methods act the same way than `console` methods!
+All log methods are built on top of [console](https://developer.mozilla.org/en-US/docs/Web/API/console) which means that each Swaler log methods act the same way than [console](https://developer.mozilla.org/en-US/docs/Web/API/console) methods!
 
 ## logger.trace
 
@@ -146,22 +149,21 @@ Sometimes, you may need to pass options when calling a log. To do so, use `withL
 
 ```typescript
 logger
-  .withLogOptions(/* pass options object here */)
+  .withLogOptions({
+    ignoreLevel: boolean,
+  })
   .info('An info message with options');
 ```
 
 ### Available options
 
-| options     | Description                                   |
-| ----------- | --------------------------------------------- |
-| ignoreLevel | Make the log ignoring the level of the logger |
+| options     | Type    | Description                                   |
+| ----------- | ------- | --------------------------------------------- |
+| ignoreLevel | boolean | Make the log ignoring the level of the logger |
 
 <br>
 
-## SwalerLogOptions.ignoreLevel
-
-type: `boolean`
-Make the log ignoring the level set up
+### SwalerLogOptions.ignoreLevel
 
 ```typescript
 const logger = new Logger('AuthModule', {level: SwalerLevels.WARN});
