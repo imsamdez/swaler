@@ -23,10 +23,15 @@ logger.debug('Hello there!'); // Hello there!
 // A logger with a Context
 const loggerWithCtx = new Logger('Dalaran');
 
-loggerWithCtx.debug('A new expansion has been detected...'); // [Dalaran] A new expansion has been detected...
-loggerWithCtx.info(`Time to go to Northrend.`); // [Dalaran] Time to go to Northrend.
-loggerWithCtx.warn('Attention', 'to', 'take off!'); // [Dalaran] Attention to take off!
-loggerWithCtx.error('A %s has been found!', 'crater'); // [Dalaran] A crater has been found!
+loggerWithCtx.debug('A new expansion has been detected...');
+loggerWithCtx.info(`Time to go to Northrend.`);
+loggerWithCtx.warn('Attention', 'to', 'take off!');
+loggerWithCtx.error('A %s has been found!', 'crater');
+
+// [Dalaran] A new expansion has been detected...
+// [Dalaran] Time to go to Northrend.
+// [Dalaran] Attention to take off!
+// [Dalaran] A crater has been found!
 ```
 
 # Create a logger
