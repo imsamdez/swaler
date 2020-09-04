@@ -1,0 +1,38 @@
+{
+  "name": "swaler",
+  "version": "1.0.0",
+  "description": "A Simple Web App Logger designed for... web apps!",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "build:dev": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch --verbose false",
+    "prepublish": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imsamdez/swaler.git"
+  },
+  "keywords": [
+    "logger",
+    "vanillajs",
+    "web"
+  ],
+  "author": "samdez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imsamdez/swaler/issues"
+  },
+  "homepage": "https://github.com/imsamdez/swaler#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.13",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  }
+}
