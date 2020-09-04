@@ -72,11 +72,11 @@ describe('Handlers', () => {
 
 describe('Level', () => {
   const logger = new Swaler(null);
-  let mockHandlerTrace = null;
-  let mockHandlerDebug = null;
-  let mockHandlerInfo = null;
-  let mockHandlerWarn = null;
-  let mockHandlerError = null;
+  let mockHandlerTrace: jest.SpyInstance;
+  let mockHandlerDebug: jest.SpyInstance;
+  let mockHandlerInfo: jest.SpyInstance;
+  let mockHandlerWarn: jest.SpyInstance;
+  let mockHandlerError: jest.SpyInstance;
 
   beforeAll(() => {
     mockHandlerTrace = jest.spyOn(testsUtils.handlers, SwalerTypes.TRACE);
