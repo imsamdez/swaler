@@ -37,11 +37,11 @@ export interface SwalerLogOptions {
  * Define the console function to call for each type of log
  */
 export const handlers = {
-  [SwalerTypes.TRACE]: console.trace,
-  [SwalerTypes.DEBUG]: console.debug,
-  [SwalerTypes.INFO]: console.info,
-  [SwalerTypes.WARN]: console.warn,
-  [SwalerTypes.ERROR]: console.error,
+  [SwalerTypes.TRACE]: window.console.trace,
+  [SwalerTypes.DEBUG]: window.console.debug,
+  [SwalerTypes.INFO]: window.console.info,
+  [SwalerTypes.WARN]: window.console.warn,
+  [SwalerTypes.ERROR]: window.console.error,
 };
 
 let defaultLevel = SwalerLevels.DEBUG;
