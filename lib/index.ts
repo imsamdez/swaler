@@ -1,3 +1,5 @@
+const getGlobal = () => (window != null ? window : global);
+
 /**
  * Swaler Enumerations
  *  - types: List of log type that can be done
@@ -37,11 +39,11 @@ export interface SwalerLogOptions {
  * Define the console function to call for each type of log
  */
 export const handlers = {
-  [SwalerTypes.TRACE]: (): any => window.console.trace,
-  [SwalerTypes.DEBUG]: (): any => window.console.debug,
-  [SwalerTypes.INFO]: (): any => window.console.info,
-  [SwalerTypes.WARN]: (): any => window.console.warn,
-  [SwalerTypes.ERROR]: (): any => window.console.error,
+  [SwalerTypes.TRACE]: (): any => getGlobal().console.trace,
+  [SwalerTypes.DEBUG]: (): any => getGlobal().console.debug,
+  [SwalerTypes.INFO]: (): any => getGlobal().console.info,
+  [SwalerTypes.WARN]: (): any => getGlobal().console.warn,
+  [SwalerTypes.ERROR]: (): any => getGlobal().console.error,
 };
 
 let defaultLevel = SwalerLevels.DEBUG;

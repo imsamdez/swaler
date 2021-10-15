@@ -24,8 +24,10 @@ describe('Handlers', () => {
   const logger = new Swaler(null, {level: SwalerLevels.TRACE});
 
   it('logger.trace should call console.trace with expected parameters', () => {
-    expect(testsUtils.handlers[SwalerTypes.TRACE]).toEqual(console.trace);
-    const mockHandlerTrace = jest.spyOn(testsUtils.handlers, SwalerTypes.TRACE);
+    expect(testsUtils.handlers[SwalerTypes.TRACE]()).toEqual(
+      global.console.trace
+    );
+    const mockHandlerTrace = jest.spyOn(global.console, 'trace');
 
     expect(mockHandlerTrace).not.toHaveBeenCalled();
     logger.trace('A', 'trace', 'message');
@@ -33,8 +35,8 @@ describe('Handlers', () => {
     mockHandlerTrace.mockRestore();
   });
   it('logger.debug should call console.debug with expected parameters', () => {
-    expect(testsUtils.handlers[SwalerTypes.DEBUG]).toEqual(console.debug);
-    const mockHandlerDebug = jest.spyOn(testsUtils.handlers, SwalerTypes.DEBUG);
+    expect(testsUtils.handlers[SwalerTypes.DEBUG]()).toEqual(console.debug);
+    const mockHandlerDebug = jest.spyOn(global.console, 'debug');
 
     expect(mockHandlerDebug).not.toHaveBeenCalled();
     logger.debug('A', 'debug', 'message');
@@ -42,8 +44,8 @@ describe('Handlers', () => {
     mockHandlerDebug.mockRestore();
   });
   it('logger.info should call console.info with expected parameters', () => {
-    expect(testsUtils.handlers[SwalerTypes.INFO]).toEqual(console.info);
-    const mockHandlerInfo = jest.spyOn(testsUtils.handlers, SwalerTypes.INFO);
+    expect(testsUtils.handlers[SwalerTypes.INFO]()).toEqual(console.info);
+    const mockHandlerInfo = jest.spyOn(global.console, 'info');
 
     expect(mockHandlerInfo).not.toHaveBeenCalled();
     logger.info('An', 'info', 'message');
@@ -51,8 +53,8 @@ describe('Handlers', () => {
     mockHandlerInfo.mockRestore();
   });
   it('logger.warn should call console.warn with expected parameters', () => {
-    expect(testsUtils.handlers[SwalerTypes.WARN]).toEqual(console.warn);
-    const mockHandlerWarn = jest.spyOn(testsUtils.handlers, SwalerTypes.WARN);
+    expect(testsUtils.handlers[SwalerTypes.WARN]()).toEqual(console.warn);
+    const mockHandlerWarn = jest.spyOn(global.console, 'warn');
 
     expect(mockHandlerWarn).not.toHaveBeenCalled();
     logger.warn('A', 'warn', 'message');
@@ -60,8 +62,8 @@ describe('Handlers', () => {
     mockHandlerWarn.mockRestore();
   });
   it('logger.error should call console.error with expected parameters', () => {
-    expect(testsUtils.handlers[SwalerTypes.ERROR]).toEqual(console.error);
-    const mockHandlerError = jest.spyOn(testsUtils.handlers, SwalerTypes.ERROR);
+    expect(testsUtils.handlers[SwalerTypes.ERROR]()).toEqual(console.error);
+    const mockHandlerError = jest.spyOn(global.console, 'error');
 
     expect(mockHandlerError).not.toHaveBeenCalled();
     logger.error('An', 'error', 'message');
@@ -79,11 +81,11 @@ describe('Level', () => {
   let mockHandlerError: jest.SpyInstance;
 
   beforeAll(() => {
-    mockHandlerTrace = jest.spyOn(testsUtils.handlers, SwalerTypes.TRACE);
-    mockHandlerDebug = jest.spyOn(testsUtils.handlers, SwalerTypes.DEBUG);
-    mockHandlerInfo = jest.spyOn(testsUtils.handlers, SwalerTypes.INFO);
-    mockHandlerWarn = jest.spyOn(testsUtils.handlers, SwalerTypes.WARN);
-    mockHandlerError = jest.spyOn(testsUtils.handlers, SwalerTypes.ERROR);
+    mockHandlerTrace = jest.spyOn(global.console, 'trace');
+    mockHandlerDebug = jest.spyOn(global.console, 'debug');
+    mockHandlerInfo = jest.spyOn(global.console, 'info');
+    mockHandlerWarn = jest.spyOn(global.console, 'warn');
+    mockHandlerError = jest.spyOn(global.console, 'error');
   });
   afterAll(() => {
     mockHandlerTrace.mockRestore();
@@ -278,11 +280,11 @@ describe('Log with options', () => {
   let mockHandlerError: jest.SpyInstance;
 
   beforeAll(() => {
-    mockHandlerTrace = jest.spyOn(testsUtils.handlers, SwalerTypes.TRACE);
-    mockHandlerDebug = jest.spyOn(testsUtils.handlers, SwalerTypes.DEBUG);
-    mockHandlerInfo = jest.spyOn(testsUtils.handlers, SwalerTypes.INFO);
-    mockHandlerWarn = jest.spyOn(testsUtils.handlers, SwalerTypes.WARN);
-    mockHandlerError = jest.spyOn(testsUtils.handlers, SwalerTypes.ERROR);
+    mockHandlerTrace = jest.spyOn(global.console, 'trace');
+    mockHandlerDebug = jest.spyOn(global.console, 'debug');
+    mockHandlerInfo = jest.spyOn(global.console, 'info');
+    mockHandlerWarn = jest.spyOn(global.console, 'warn');
+    mockHandlerError = jest.spyOn(global.console, 'error');
   });
   afterAll(() => {
     mockHandlerTrace.mockRestore();
