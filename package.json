@@ -2,7 +2,6 @@
   "name": "swaler",
   "version": "1.0.4",
   "description": "A Simple Web App Logger designed for... web apps!",
-  "re"
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
