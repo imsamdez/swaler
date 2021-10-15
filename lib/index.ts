@@ -37,11 +37,11 @@ export interface SwalerLogOptions {
  * Define the console function to call for each type of log
  */
 export const handlers = {
-  [SwalerTypes.TRACE]: window.console.trace,
-  [SwalerTypes.DEBUG]: window.console.debug,
-  [SwalerTypes.INFO]: window.console.info,
-  [SwalerTypes.WARN]: window.console.warn,
-  [SwalerTypes.ERROR]: window.console.error,
+  [SwalerTypes.TRACE]: (): any => window.console.trace,
+  [SwalerTypes.DEBUG]: (): any => window.console.debug,
+  [SwalerTypes.INFO]: (): any => window.console.info,
+  [SwalerTypes.WARN]: (): any => window.console.warn,
+  [SwalerTypes.ERROR]: (): any => window.console.error,
 };
 
 let defaultLevel = SwalerLevels.DEBUG;
@@ -73,7 +73,7 @@ export class Swaler {
     return defaultLevel <= level;
   }
   private log(callerArgs: IArguments, type: SwalerTypes, level: SwalerLevels) {
-    const handler = handlers[type];
+    const handler = handlers[type]();
     let handlerArgs = [...callerArgs];
 
     if (this._context != null) {
